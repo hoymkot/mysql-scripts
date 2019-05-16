@@ -1,0 +1,42 @@
+install the follow packages
+* perl
+* rrdtool 
+* php-gd 
+* perl-Time-HiRes (maybe included in core already)
+* rrdtool-perl (apt-get install librrds-perl rrdtool)
+
+Follow the instructions on 
+https://docs.pnp4nagios.org/pnp-0.6/install
+
+
+
+[root@nagios_server pnp4nagios-0.6.21]# cd /usr/local/pnp4nagios/etc
+[root@nagios_server etc]# mv misccommands.cfg-sample misccommands.cfg
+[root@nagios_server etc]# mv nagios.cfg-sample nagios.cfg
+[root@nagios_server etc]# mv rra.cfg-sample rra.cfg
+[root@nagios_server etc]# mv pages/web_traffic.cfg-sample pages/web_traffic.cfg
+
+[root@nagios_server etc]# cd check_commands/
+[root@nagios_server check_commands]# mv check_all_local_disks.cfg-sample check_all_local_disks.cfg
+[root@nagios_server check_commands]# mv check_nrpe.cfg-sample check_nrpe.cfg
+[root@nagios_server check_commands]# mv check_nwstat.cfg-sample check_nwstat.cfg
+
+
+# configure mode of performanace data processing
+https://docs.pnp4nagios.org/pnp-0.6/config
+
+# create symbolic link
+sudo ln /etc/httpd/conf.d/pnp4nagios.conf .
+
+# enable new site
+sudo a2ensite pnp4nagios
+
+# remove 
+/usr/local/pnp4nagios/share/install.php
+
+# cannot have sync mode working
+
+
+#check the configuration settings as well as performance data of hosts or services.
+https://docs.pnp4nagios.org/pnp-0.6/verify_pnp_config
+

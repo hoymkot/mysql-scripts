@@ -1,0 +1,5 @@
+sandbox scripts and configuration files for mysql 8.0 group replication 
+
+one,two,three for testing group replication with docker
+
+four,five,six for testing MySQL InnoDB Cluster with docker
